@@ -28,9 +28,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MyBooks" target="1.5" />
-      <module name="SpringTest" target="1.8" />
-      <module name="test" target="1.5" />
+      <module name="test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
