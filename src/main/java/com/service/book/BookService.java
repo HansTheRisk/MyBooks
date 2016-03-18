@@ -7,6 +7,8 @@ import com.mongo.service.MongoDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+
 @Component
 public class BookService extends MongoDBService<BookRepository>
 {
@@ -30,8 +32,8 @@ public class BookService extends MongoDBService<BookRepository>
         repository.getBook(id);
     }
 
-    public void getBooks()
+    public Collection<Book> getBooks()
     {
-        repository.getBooks();
+        return repository.getBooks();
     }
 }

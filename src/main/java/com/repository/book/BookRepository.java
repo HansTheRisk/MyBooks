@@ -5,6 +5,7 @@ import com.constants.table.Table;
 import com.controller.MongoDBController;
 import com.domain.book.Book;
 import com.domain.book.BookID;
+import com.domain.book.BookMapper;
 import com.mongo.repository.MongoDBRepository;
 
 import com.mongodb.client.FindIterable;
@@ -41,10 +42,12 @@ public class BookRepository extends MongoDBRepository
 
     public Collection<Book> getBooks()
     {
-        List<Document> documents = new ArrayList<>();
+        Collection<Book> books = new ArrayList<>();
         FindIterable<Document> doc = database.getCollection(Table.BOOKS.toString()).find();
-        doc.iterator().forEachRemaining(documents::add);
-        return null;
+        BookMapper mapper = new BookMapper();
+        // TODO finish off
+        //doc.iterator().forEachRemaining(books::add(mapper::map));
+        return books;
     }
 
 }

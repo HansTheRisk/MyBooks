@@ -10,9 +10,14 @@ import org.springframework.stereotype.Component;
 public class MongoDBController
 {
     @Autowired
-    public void setMongoClient(MongoClient client)
+    private MongoDBController(MongoClient client)
     {
-        this.client = client;
+        MongoDBController.client = client;
+    }
+
+    public static void setMongoClient(MongoClient pclient)
+    {
+        client = pclient;
     }
 
     /**
@@ -54,5 +59,6 @@ public class MongoDBController
     //////////////////////////////////////////
     // Private fields
     //////////////////////////////////////////
+
     private static MongoClient client;
 }

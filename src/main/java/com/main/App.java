@@ -1,10 +1,9 @@
 package com.main;
 
-import com.constants.database.Database;
 import com.controller.MongoDBController;
 import com.domain.book.Book;
+import com.domain.book.BookID;
 import com.domain.isbn.ISBN;
-import com.mongodb.client.MongoDatabase;
 import com.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -25,8 +24,8 @@ public class App
     private void initialise()
     {
         // STEP 1: Initialise constants
-        MongoDatabase database = MongoDBController.getDatabase(Database.DEFAULT.toString());
-        System.out.println(database.getName());
+        //MongoDatabase database = MongoDBController.getDatabase(Database.DEFAULT.toString());
+        //System.out.println(database.getName());
         // STEP 2: Initialise GUI
         Book book = new Book();
         book.setTitle("test");
@@ -34,8 +33,9 @@ public class App
         book.setISBN(new ISBN("9788379640904"));
         service.createBook(book);
         service.getBooks();
-        if(MongoDBController.dropDatabase(Database.DEFAULT.toString()) == true)
-            System.out.println("Database " + database.getName() + " dropped.");
+        System.out.println(service.getBooks());
+        //if(MongoDBController.dropDatabase(Database.DEFAULT.toString()) == true)
+            //System.out.println("Database " + database.getName() + " dropped.");
 
         MongoDBController.disconnect();
     }

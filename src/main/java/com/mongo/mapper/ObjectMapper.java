@@ -1,5 +1,8 @@
 package com.mongo.mapper;
 
-public class ObjectMapper
+import org.bson.Document;
+
+public interface ObjectMapper<T>
 {
+    T map(Document mongoDocument);
 }

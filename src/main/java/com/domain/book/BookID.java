@@ -1,5 +1,11 @@
 package com.domain.book;
 
-public class BookID
+import com.domain.identifier.Identifier;
+
+public class BookID extends Identifier<Integer>
 {
+    public BookID(int id)
+    {
+        super(Integer.valueOf(id));
+    }
 }
