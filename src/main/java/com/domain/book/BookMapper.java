@@ -12,6 +12,6 @@ public class BookMapper implements ObjectMapper<Book>
         Book book = new Book();
         book.setID(new BookID(mongoDocument.getLong("_id").intValue()));
 
-        return null;
+        return book;
     }
 }

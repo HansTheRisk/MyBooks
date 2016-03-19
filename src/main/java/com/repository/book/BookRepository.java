@@ -46,7 +46,7 @@ public class BookRepository extends MongoDBRepository
         FindIterable<Document> doc = database.getCollection(Table.BOOKS.toString()).find();
         BookMapper mapper = new BookMapper();
         // TODO finish off
-        //doc.iterator().forEachRemaining(books::add(mapper::map));
+        doc.iterator().forEachRemaining(book -> books.add(mapper.map(book)));
         return books;
     }
 

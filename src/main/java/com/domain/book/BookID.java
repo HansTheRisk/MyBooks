@@ -6,6 +6,6 @@ public class BookID extends Identifier<Integer>
 {
     public BookID(int id)
     {
-        super(Integer.valueOf(id));
+        super(new Integer(id));
     }
 }

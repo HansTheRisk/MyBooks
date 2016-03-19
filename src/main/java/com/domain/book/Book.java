@@ -94,6 +94,18 @@ public class Book
         return Objects.hash(title, year, lang, isbn);
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", year=" + year +
+                ", lang=" + lang +
+                ", isbn=" + isbn +
+                '}';
+    }
+
     private BookID id;
     private String title;
     private String author;
