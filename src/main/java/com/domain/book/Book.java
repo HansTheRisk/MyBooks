@@ -1,11 +1,17 @@
 package com.domain.book;
 
 import com.domain.isbn.ISBN;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.Language;
+
 import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
 
 // TODO Javadocs
+@Document(collection = "books")
 public class Book
 {
     public Book()
@@ -13,12 +19,12 @@ public class Book
 
     }
 
-    public BookID getID()
+    public Long getID()
     {
         return id;
     }
 
-    public void setID(BookID id)
+    public void setID(Long id)
     {
         this.id = id;
     }
@@ -106,10 +112,16 @@ public class Book
                 '}';
     }
 
-    private BookID id;
+    @Id
+    private Long id;
+    @Field
     private String title;
+    @Field
     private String author;
+    @Field
     private Date year;
+    @Field
     private Locale lang;
+    @Field
     private ISBN isbn;
 }

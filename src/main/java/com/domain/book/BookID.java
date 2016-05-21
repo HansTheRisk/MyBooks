@@ -2,10 +2,10 @@ package com.domain.book;
 
 import com.domain.identifier.Identifier;
 
-public class BookID extends Identifier<Integer>
+public class BookID extends Identifier<Long>
 {
-    public BookID(int id)
+    public BookID(long id)
     {
-        super(new Integer(id));
+        super(new Long(id));
     }
 }

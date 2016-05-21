@@ -1,8 +1,9 @@
 package com.domain.identifier;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Identifier<T>
+public abstract class Identifier<T> implements Serializable
 {
     public Identifier(T identifier)
     {

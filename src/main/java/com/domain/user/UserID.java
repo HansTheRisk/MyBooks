@@ -1,15 +1,11 @@
 package com.domain.user;
 
-public class UserID
+import com.domain.identifier.Identifier;
+
+public class UserID extends Identifier<Integer>
 {
     public UserID(int id)
     {
-        this.id = id;
+        super(new Integer(id));
     }
-
-    public int getId() {
-        return id;
-    }
-
-    private int id;
 }

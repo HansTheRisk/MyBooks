@@ -26,9 +26,7 @@ public class ISBN
     @Override
     public String toString()
     {
-        return "ISBN{" +
-                "number='" + number + '\'' +
-                '}';
+        return number;
     }
 
     @Override
