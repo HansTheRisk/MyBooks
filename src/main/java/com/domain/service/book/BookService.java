@@ -1,5 +1,6 @@
 package com.domain.service.book;
 
+import com.database.mongo.service.UniversallyIdentifiableService;
 import com.domain.book.Book;
 import com.database.mongo.service.MongoBaseService;
 import com.domain.identifier.UUID;
@@ -12,7 +13,7 @@ import static com.mongodb.assertions.Assertions.notNull;
 
 @Component
 @Service
-public class BookService extends MongoBaseService<Book>
+public class BookService extends UniversallyIdentifiableService<Book>
 {
     public Collection<Book> getBooks()
     {
@@ -22,7 +23,7 @@ public class BookService extends MongoBaseService<Book>
     public Book getBook(UUID id)
     {
         notNull("Book id", id);
-        return repository.findOne(id);
+        return repository.findByUuid(id);
     }
 //
 //    public Iterable<Book> getBooks(Iterable<UUID> ids)
