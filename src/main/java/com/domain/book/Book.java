@@ -1,10 +1,10 @@
 package com.domain.book;
 
+import com.domain.identifier.UniversallyIdentifiable;
+import com.domain.identifier.UUID;
 import com.domain.isbn.ISBN;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
-import org.springframework.data.mongodb.core.mapping.Language;
 
 import java.util.Date;
 import java.util.Locale;
@@ -12,21 +12,21 @@ import java.util.Objects;
 
 // TODO Javadocs
 @Document(collection = "books")
-public class Book
+public class Book implements UniversallyIdentifiable
 {
     public Book()
     {
 
     }
 
-    public Long getID()
-    {
-        return id;
+    @Override
+    public UUID getUuid() {
+        return uuid;
     }
 
-    public void setID(Long id)
-    {
-        this.id = id;
+    @Override
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 
     public String getTitle()
@@ -103,7 +103,7 @@ public class Book
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + id +
+                "uuid=" + uuid +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", year=" + year +
@@ -112,8 +112,8 @@ public class Book
                 '}';
     }
 
-    @Id
-    private Long id;
+    @Field
+    private UUID uuid;
     @Field
     private String title;
     @Field

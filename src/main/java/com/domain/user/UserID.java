@@ -1,6 +1,6 @@
 package com.domain.user;
 
-import com.domain.identifier.Identifier;
+import com.database.identifier.Identifier;
 
 public class UserID extends Identifier<Integer>
 {
