@@ -2,10 +2,7 @@ package com.domain.service.book;
 
 import com.database.mongo.service.UniversallyIdentifiableService;
 import com.domain.book.Book;
-import com.database.mongo.service.MongoBaseService;
-import com.domain.identifier.UUID;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package com.domain.identifier;
+package com.database.mongo.document.universallyIdentifiable;
 
 import com.database.identifier.Identifier;
 import org.springframework.data.mongodb.core.mapping.Document;

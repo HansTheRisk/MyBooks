@@ -1,4 +1,4 @@
-package com.database.mongo.document;
+package com.database.mongo.document.identifiable;
 
 import com.database.identifier.Identifier;
 

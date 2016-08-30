@@ -1,7 +1,8 @@
 package com.domain.book;
 
-import com.domain.identifier.UniversallyIdentifiable;
-import com.domain.identifier.UUID;
+import com.database.mongo.document.universallyIdentifiable.UniversallyIdentifiable;
+import com.database.mongo.document.universallyIdentifiable.UUID;
+import com.database.mongo.document.universallyIdentifiable.UniversallyIdentifiableDocument;
 import com.domain.isbn.ISBN;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -12,21 +13,11 @@ import java.util.Objects;
 
 // TODO Javadocs
 @Document(collection = "books")
-public class Book implements UniversallyIdentifiable
+public class Book extends UniversallyIdentifiableDocument
 {
     public Book()
     {
 
-    }
-
-    @Override
-    public UUID getUuid() {
-        return uuid;
-    }
-
-    @Override
-    public void setUuid(UUID uuid) {
-        this.uuid = uuid;
     }
 
     public String getTitle()
@@ -103,7 +94,7 @@ public class Book implements UniversallyIdentifiable
     @Override
     public String toString() {
         return "Book{" +
-                "uuid=" + uuid +
+                "uuid=" + this.getUuid() +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", year=" + year +
@@ -112,8 +103,6 @@ public class Book implements UniversallyIdentifiable
                 '}';
     }
 
-    @Field
-    private UUID uuid;
     @Field
     private String title;
     @Field
