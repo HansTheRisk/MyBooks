@@ -12,7 +12,6 @@ import java.util.Collection;
 import static com.mongodb.assertions.Assertions.notNull;
 
 @Component
-@Service
 public class BookService extends UniversallyIdentifiableService<Book>
 {
     public Collection<Book> getBooks()
@@ -20,11 +19,11 @@ public class BookService extends UniversallyIdentifiableService<Book>
         return repository.findAll();
     }
 
-    public Book getBook(UUID id)
-    {
-        notNull("Book id", id);
-        return repository.findByUuid(id);
-    }
+//    public Book getBook(UUID id)
+//    {
+//        notNull("Book id", id);
+//        return repository.findByUuid(id);
+//    }
 //
 //    public Iterable<Book> getBooks(Iterable<UUID> ids)
 //    {

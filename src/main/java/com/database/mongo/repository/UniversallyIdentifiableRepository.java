@@ -1,9 +1,11 @@
 package com.database.mongo.repository;
 
+import com.domain.book.Book;
 import com.domain.identifier.UUID;
-import com.domain.identifier.UniversallyIdentifiable;
+import org.springframework.stereotype.Component;
 
-public interface UniversallyIdentifiableRepository<T extends UniversallyIdentifiable> extends MongoBaseRepository<T>
+@Component
+public interface UniversallyIdentifiableRepository<T extends Book> extends MongoBaseRepository<T>
 {
     T findByUuid(UUID uuid);
 }
