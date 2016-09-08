@@ -1,11 +1,13 @@
 package com.database.identifier;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Identifier<T> implements Serializable
+@Document
+public class Identifier<T> implements Serializable
 {
     public Identifier(T identifier)
     {

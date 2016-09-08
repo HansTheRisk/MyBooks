@@ -2,7 +2,8 @@ package com.database.mongo.document.identifiable;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
-public class Document implements Identifiable
+@org.springframework.data.mongodb.core.mapping.Document
+public abstract class Document implements Identifiable
 {
     public DocumentID getId() {
         return id;

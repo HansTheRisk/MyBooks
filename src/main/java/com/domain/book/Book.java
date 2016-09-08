@@ -1,9 +1,9 @@
 package com.domain.book;
 
-import com.database.mongo.document.universallyIdentifiable.UniversallyIdentifiable;
-import com.database.mongo.document.universallyIdentifiable.UUID;
 import com.database.mongo.document.universallyIdentifiable.UniversallyIdentifiableDocument;
 import com.domain.isbn.ISBN;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -94,7 +94,7 @@ public class Book extends UniversallyIdentifiableDocument
     @Override
     public String toString() {
         return "Book{" +
-                "uuid=" + this.getUuid() +
+                "id=" + this.getId() +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", year=" + year +

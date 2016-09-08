@@ -3,9 +3,9 @@ package com.database.mongo.repository;
 import com.database.mongo.document.identifiable.Document;
 import com.database.mongo.document.identifiable.DocumentID;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.data.repository.NoRepositoryBean;
 
-@Component
+@NoRepositoryBean
 public interface MongoBaseRepository<T extends Document> extends MongoRepository<T, DocumentID>
 {
 }

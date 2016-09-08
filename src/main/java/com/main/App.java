@@ -1,11 +1,15 @@
 package com.main;
 
-import com.domain.service.book.BookService;
 import com.domain.book.Book;
+import com.domain.isbn.ISBN;
+import com.domain.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
+import java.util.Locale;
 
 @Component
 public class App 
@@ -20,14 +24,13 @@ public class App
     private void initialise()
     {
         Book book = new Book();
-//        book.setID(repository.count()+1);
-//        book.setTitle("test");
-//        book.setAuthor("author");
-//        book.setISBN(new ISBN("9788379640904"));
-//        book.setLang(Locale.CHINA);
-//        book.setYear(new Date(1994));
-//        repository.insert(book);
-        System.out.println(service.getBooks());
+        book.setTitle("testTwo");
+        book.setAuthor("author");
+        book.setISBN(new ISBN("9788379640904"));
+        book.setLang(Locale.ENGLISH);
+        book.setYear(new Date(1985));
+        service.save(book);
+         System.out.println(service.getBooks());
     }
 
     @Autowired

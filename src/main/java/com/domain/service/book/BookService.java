@@ -1,6 +1,6 @@
 package com.domain.service.book;
 
-import com.database.mongo.service.UniversallyIdentifiableService;
+import com.database.mongo.service.MongoUniversallyIdentifiableService;
 import com.domain.book.Book;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import java.util.Collection;
 import static com.mongodb.assertions.Assertions.notNull;
 
 @Component
-public class BookService extends UniversallyIdentifiableService<Book>
+public class BookService extends MongoUniversallyIdentifiableService<Book>
 {
     public Collection<Book> getBooks()
     {
