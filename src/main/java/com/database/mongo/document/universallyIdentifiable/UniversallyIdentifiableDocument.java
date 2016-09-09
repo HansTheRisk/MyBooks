@@ -5,14 +5,14 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 public abstract class UniversallyIdentifiableDocument extends Document implements UniversallyIdentifiable
 {
-    public UUID getUuid() {
+    public String getUuid() {
         return uuid;
     }
 
-    public void setUuid(UUID uuid) {
+    public void setUuid(String uuid) {
         this.uuid = uuid;
     }
 
     @Field
-    private UUID uuid;
+    private String uuid;
 }

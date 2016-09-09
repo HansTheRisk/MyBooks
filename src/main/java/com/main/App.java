@@ -9,6 +9,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 @Component
@@ -23,14 +24,14 @@ public class App
 
     private void initialise()
     {
-        Book book = new Book();
-        book.setTitle("testTwo");
-        book.setAuthor("author");
-        book.setISBN(new ISBN("9788379640904"));
-        book.setLang(Locale.ENGLISH);
-        book.setYear(new Date(1985));
-        service.save(book);
-         System.out.println(service.getBooks());
+//        Book book = new Book();
+//        book.setTitle("testTwo");
+//        book.setAuthor("author");
+//        book.setISBN(new ISBN("9788379640904"));
+//        book.setLang(Locale.ENGLISH);
+//        book.setYear(new Date(1985));
+//        service.save(book);
+        System.out.println(service.findByUUID("1a07bc2a-64b2-4a0b-8e04-4070006dd144"));
     }
 
     @Autowired

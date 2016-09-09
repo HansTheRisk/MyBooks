@@ -13,6 +13,8 @@ public abstract class Document implements Identifiable
         this.id = id;
     }
 
+    public abstract String toString();
+
     @Field
     private DocumentID id;
 }

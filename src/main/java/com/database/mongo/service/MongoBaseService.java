@@ -4,8 +4,6 @@ import com.database.mongo.document.identifiable.Document;
 import com.database.mongo.document.identifiable.DocumentID;
 import com.database.mongo.repository.MongoBaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.stereotype.Component;
 
 public class MongoBaseService<T extends Document>
 {

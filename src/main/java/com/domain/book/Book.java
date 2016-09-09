@@ -2,6 +2,8 @@ package com.domain.book;
 
 import com.database.mongo.document.universallyIdentifiable.UniversallyIdentifiableDocument;
 import com.domain.isbn.ISBN;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -92,9 +94,11 @@ public class Book extends UniversallyIdentifiableDocument
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Book{" +
                 "id=" + this.getId() +
+                ", uuid=" + this.getUuid() +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", year=" + year +

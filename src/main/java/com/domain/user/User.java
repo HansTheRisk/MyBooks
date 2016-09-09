@@ -1,29 +1,19 @@
 package com.domain.user;
 
-public class User
+import com.database.mongo.document.universallyIdentifiable.UniversallyIdentifiableDocument;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+@Document(collection = "User")
+public class User extends UniversallyIdentifiableDocument
 {
-    public User(String name)
+    public User()
     {
-        this.name = name;
-    }
 
-    public User(UserID id, String name)
-    {
-        this.id = id;
-        this.name = name;
-    }
-
-    public UserID getId() {
-        return id;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setID(UserID id)
-    {
-        this.id = id;
     }
 
     public void setName(String name)
@@ -34,13 +24,17 @@ public class User
     @Override
     public String toString()
     {
-        return id + " " + name;
+        return "Book{" +
+            "id=" + this.getId() +
+            ", uuid=" + this.getUuid() +
+            ", name='" + name +
+            '}';
     }
 
     //////////////////////////////////////////
     // Private fields
     //////////////////////////////////////////
 
-    private UserID id;
+    @Field
     private String name;
 }
