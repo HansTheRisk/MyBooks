@@ -1,6 +1,6 @@
-package main;
+package com.mybooks.app.app;
 
-import service.book.BookService;
+import com.mybooks.app.service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;

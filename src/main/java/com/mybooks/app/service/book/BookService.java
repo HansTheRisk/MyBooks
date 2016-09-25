@@ -1,7 +1,7 @@
-package service.book;
+package com.mybooks.app.service.book;
 
-import mongo.service.MongoUniversallyIdentifiableService;
-import domain.book.Book;
+import com.mybooks.mongo.service.MongoUniversallyIdentifiableService;
+import com.mybooks.domain.domain.book.Book;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -19,18 +19,18 @@ public class BookService extends MongoUniversallyIdentifiableService<Book>
 //    public Book getBook(UUID id)
 //    {
 //        notNull("Book id", id);
-//        return repository.findByUuid(id);
+//        return domain.repository.findByUuid(id);
 //    }
 //
 //    public Iterable<Book> getBooks(Iterable<UUID> ids)
 //    {
 //        notNull("Book ids", ids);
-//        return repository.findAll(ids);
+//        return domain.repository.findAll(ids);
 //    }
 //
 //    public Book insertBook(Book service.book)
 //    {
 //        notNull("Book", service.book);
-//        return repository.insert(service.book);
+//        return domain.repository.insert(service.book);
 //    }
 }
