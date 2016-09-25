@@ -1,16 +1,10 @@
-package com.main;
+package main;
 
-import com.domain.book.Book;
-import com.domain.isbn.ISBN;
-import com.domain.service.book.BookService;
+import service.book.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 @Component
 public class App 
@@ -24,13 +18,13 @@ public class App
 
     private void initialise()
     {
-//        Book book = new Book();
-//        book.setTitle("testTwo");
-//        book.setAuthor("author");
-//        book.setISBN(new ISBN("9788379640904"));
-//        book.setLang(Locale.ENGLISH);
-//        book.setYear(new Date(1985));
-//        service.save(book);
+//        Book service.book = new Book();
+//        service.book.setTitle("testTwo");
+//        service.book.setAuthor("author");
+//        service.book.setISBN(new ISBN("9788379640904"));
+//        service.book.setLang(Locale.ENGLISH);
+//        service.book.setYear(new Date(1985));
+//        service.save(service.book);
         System.out.println(service.findByUUID("1a07bc2a-64b2-4a0b-8e04-4070006dd144"));
     }
 

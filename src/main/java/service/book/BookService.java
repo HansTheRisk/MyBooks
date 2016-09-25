@@ -1,7 +1,7 @@
-package com.domain.service.book;
+package service.book;
 
-import com.database.mongo.service.MongoUniversallyIdentifiableService;
-import com.domain.book.Book;
+import mongo.service.MongoUniversallyIdentifiableService;
+import domain.book.Book;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
@@ -28,9 +28,9 @@ public class BookService extends MongoUniversallyIdentifiableService<Book>
 //        return repository.findAll(ids);
 //    }
 //
-//    public Book insertBook(Book book)
+//    public Book insertBook(Book service.book)
 //    {
-//        notNull("Book", book);
-//        return repository.insert(book);
+//        notNull("Book", service.book);
+//        return repository.insert(service.book);
 //    }
 }
